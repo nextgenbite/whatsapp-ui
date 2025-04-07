@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/widgets/ui_helper.dart';
 
+import '../message/message_screen.dart';
+
 class ChatsScreen extends StatelessWidget {
-  var arrContent = [
+  ChatsScreen({super.key});
+  final arrContent = [
     {
       "images":
           "https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg",
@@ -86,6 +89,18 @@ class ChatsScreen extends StatelessWidget {
             child: ListView.builder(
               itemBuilder: (context, index) {
                 return ListTile(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => MessageScreen(
+                              userName: arrContent[index]["name"].toString(),
+                              userImage: arrContent[index]["images"].toString(),
+                            ),
+                      ),
+                    );
+                  },
                   leading: CircleAvatar(
                     radius: 40,
                     backgroundImage: NetworkImage(

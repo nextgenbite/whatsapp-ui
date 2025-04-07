@@ -7,6 +7,7 @@ import '../../widgets/ui_helper.dart';
 import '../home/home_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
@@ -19,72 +20,79 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(height: 80),
-            UiHelper.customTextStyle(
-              text: "Profile info",
-              fontSize: 20,
-              color: const Color(0XFF00A884),
-              fontWeight: FontWeight.bold,
-            ),
-            const SizedBox(height: 30),
-            UiHelper.customTextStyle(
-              text: "Please provide your name and an optional",
-              fontSize: 14,
-            ),
-            UiHelper.customTextStyle(text: "profile photo", fontSize: 14),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                _openBottom(context);
-              },
-              child:
-                  pickedimage == null
-                      ? CircleAvatar(
-                        radius: 80,
-                        backgroundColor: const Color(0XFFD9D9D9),
-                        child: Image.asset(
-                          "assets/images/photo-camera 1.png",
-                          height: 50,
-                          fit: BoxFit.cover,
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        child: Center(
+          child: Column(
+            children: [
+              const SizedBox(height: 80),
+              UiHelper.customTextStyle(
+                text: "Profile info",
+                fontSize: 20,
+                color: const Color(0XFF00A884),
+                fontWeight: FontWeight.bold,
+              ),
+              const SizedBox(height: 30),
+              UiHelper.customTextStyle(
+                text: "Please provide your name and an optional",
+                fontSize: 14,
+              ),
+              UiHelper.customTextStyle(text: "profile photo", fontSize: 14),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  _openBottom(context);
+                },
+                child:
+                    pickedimage == null
+                        ? CircleAvatar(
+                          radius: 80,
+                          backgroundColor: const Color(0XFFD9D9D9),
+                          child: Image.asset(
+                            "assets/images/photo-camera 1.png",
+                            height: 50,
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                        : CircleAvatar(
+                          radius: 80,
+                          backgroundImage: FileImage(pickedimage!),
                         ),
-                      )
-                      : CircleAvatar(
-                        radius: 80,
-                        backgroundImage: FileImage(pickedimage!),
-                      ),
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 300,
-                  child: TextField(
-                    keyboardType: TextInputType.name,
-                    controller: nameController,
-                    decoration: const InputDecoration(
-                      hintText: "Type your name here",
-                      hintStyle: TextStyle(color: Color(0XFF5E5E5E)),
-                      border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Color(0XFF05AA82)),
-                      ),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Color(0XFF05AA82)),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Color(0XFF05AA82)),
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width - 100,
+                    child: TextField(
+                      keyboardType: TextInputType.name,
+                      controller: nameController,
+                      decoration: const InputDecoration(
+                        hintText: "Type your name here",
+                        hintStyle: TextStyle(color: Color(0XFF5E5E5E)),
+                        border: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0XFF05AA82)),
+                        ),
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0XFF05AA82)),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Color(0XFF05AA82)),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(width: 10),
-                Image.asset("assets/images/happy-face 1.png"),
-              ],
-            ),
-          ],
+                  const SizedBox(width: 10),
+                  Image.asset(
+                    "assets/images/happy-face 1.png",
+                    height: 30,
+                    width: 30,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: UiHelper.customButton(
@@ -105,7 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Container(
+        return SizedBox(
           height: 200,
           width: 200,
           child: Column(

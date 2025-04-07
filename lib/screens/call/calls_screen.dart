@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp/widgets/ui_helper.dart';
 
 class CallsScreen extends StatelessWidget {
-  var callContent = [
+  CallsScreen({super.key});
+  final callContent = [
     {
       "name": "Micheal",
       "img":

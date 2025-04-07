@@ -5,13 +5,13 @@ import '../profile/profile_screen.dart';
 
 class OTPScreen extends StatelessWidget {
   OTPScreen({required this.phoneNumber, super.key});
-  String phoneNumber;
-  TextEditingController otp1Controller = TextEditingController();
-  TextEditingController otp2Controller = TextEditingController();
-  TextEditingController otp3Controller = TextEditingController();
-  TextEditingController otp4Controller = TextEditingController();
-  TextEditingController otp5Controller = TextEditingController();
-  TextEditingController otp6Controller = TextEditingController();
+  final String phoneNumber;
+  final TextEditingController otp1Controller = TextEditingController();
+  final TextEditingController otp2Controller = TextEditingController();
+  final TextEditingController otp3Controller = TextEditingController();
+  final TextEditingController otp4Controller = TextEditingController();
+  final TextEditingController otp5Controller = TextEditingController();
+  final TextEditingController otp6Controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

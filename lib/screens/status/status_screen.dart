@@ -3,7 +3,7 @@ import 'package:whatsapp/widgets/ui_helper.dart';
 
 class StatusScreen extends StatelessWidget {
   StatusScreen({super.key});
-  var statusContent = [
+  final statusContent = [
     {
       "img":
           "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg",
