@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screens/bordin/on_bording_screen.dart';
+import 'package:whatsapp/screens/bording/on_bording_screen.dart';
 import 'package:whatsapp/widgets/ui_helper.dart';
 
 class SplashScreen extends StatefulWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp/screens/splash/splash_screen.dart';
+import 'package:whatsapp/screens/home/home_screen.dart';
+// import 'package:whatsapp/screens/splash/splash_screen.dart';
 
 // import 'widgets/ui_helper.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'WhatsApp Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -22,8 +24,9 @@ class MyApp extends StatelessWidget {
           onPrimary: Color(0xFF00A884),
         ),
         useMaterial3: false,
+        fontFamily: 'Roboto',
       ),
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/widgets/ui_helper.dart';
 
+import '../login/login_screen.dart';
+
 class OnBordingScreen extends StatelessWidget {
   const OnBordingScreen({super.key});
 
@@ -56,7 +58,10 @@ class OnBordingScreen extends StatelessWidget {
       floatingActionButton: UiHelper.customButton(
         context: context,
         callback: () {
-          // Navigate to the next screen or perform an action
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
         },
         title: 'AGREE AND CONTINUE',
       ),
